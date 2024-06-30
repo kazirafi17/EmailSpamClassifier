@@ -39,7 +39,7 @@ tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 
 # Adding a custom logo
-logo = Image.open('path_to_logo/logo.png')
+logo = Image.open('logo.png')
 st.image(logo, width=150)
 
 st.title("📧 Email/SMS Spam Classifier")
