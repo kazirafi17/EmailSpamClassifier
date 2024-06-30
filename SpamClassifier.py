@@ -385,4 +385,3 @@ pickle.dump(mnb,open('model.pkl','wb'))
 pickle.dump(tfidf,open('vectorizer.pkl','wb'))
 
 
-
