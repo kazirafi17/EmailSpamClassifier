@@ -66,7 +66,7 @@ st.markdown(
         color: white;
     }
     .stTextArea>div>div>textarea:hover {
-        background-color: white;
+        background-color: #C2C2A9;
         color: black;
     }
     .label {
