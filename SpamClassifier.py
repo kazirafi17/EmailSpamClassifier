@@ -17,6 +17,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, precision_score
+nltk.download('punkt')
 
 
 
@@ -384,35 +385,4 @@ pickle.dump(mnb,open('model.pkl','wb'))
 pickle.dump(tfidf,open('vectorizer.pkl','wb'))
 
 
-
-
-import sys
-
-print("Python version:", sys.version)
-
-
-# In[ ]:
-
-
-import nbformat
-from nbconvert import PythonExporter
-
-def convert_ipynb_to_py(ipynb_file, py_file):
-    # Read the notebook content
-    with open(ipynb_file, 'r', encoding='utf-8') as f:
-        notebook_content = f.read()
-
-    # Parse the notebook content
-    notebook = nbformat.reads(notebook_content, as_version=4)
-
-    # Convert the notebook to Python script
-    python_exporter = PythonExporter()
-    python_script, _ = python_exporter.from_notebook_node(notebook)
-
-    # Write the Python script to a file
-    with open(py_file, 'w', encoding='utf-8') as f:
-        f.write(python_script)
-
-# Example usage
-convert_ipynb_to_py('example_notebook.ipynb', 'converted_script.py')
 
