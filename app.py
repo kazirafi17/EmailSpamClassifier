@@ -99,7 +99,7 @@ st.markdown('<div class="label section-header">Enter the message below to check 
 
 # User input
 st.markdown('<div class="label">📝 Enter your message here:</div>', unsafe_allow_html=True)
-input_sms = st.text_area("", class_="hover-white")  # Apply class_ instead of class for CSS class
+input_sms = st.text_area("", height=200, key="input_sms")  # Adjusted height and added key for caching
 
 if st.button('🚀 Predict'):
     with st.spinner('Analyzing...'):
