@@ -4,7 +4,6 @@ import string
 from nltk.corpus import stopwords
 import nltk
 from nltk.stem.porter import PorterStemmer
-from PIL import Image
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -57,14 +56,17 @@ st.markdown(
         font-weight: bold;
         margin-bottom: 20px;
     }
-    .stTextArea>div>div>textarea {
-        background-color: #2b2b2b;
-        color: white;
-    }
     .section-header {
         color: #2980b9;
         font-size: 1.5rem;
         margin-bottom: 10px;
+    }
+    .stTextArea>div>div>textarea {
+        background-color: #2b2b2b;
+        color: white;
+    }
+    .label {
+        color: #2980b9;
     }
     .footer {
         color: white;
@@ -90,12 +92,10 @@ st.markdown(
 
 st.markdown('<div class="main">', unsafe_allow_html=True)
 st.markdown('<div class="title">📧 Email/SMS Spam Classifier</div>', unsafe_allow_html=True)
-st.write("""
-### Enter the message below to check if it is Spam or Not Spam
-""")
+st.markdown('<div class="label">### Enter the message below to check if it is Spam or Not Spam</div>', unsafe_allow_html=True)
 
 # User input
-input_sms = st.text_area("📝 Enter your message here:")
+input_sms = st.text_area('<div class="label">📝 Enter your message here:</div>', unsafe_allow_html=True)
 
 if st.button('🚀 Predict'):
     with st.spinner('Analyzing...'):
@@ -116,6 +116,8 @@ st.markdown('<div class="footer">', unsafe_allow_html=True)
 st.markdown("""
 ---
 Made with ❤️ by [Mukit](https://www.linkedin.com/in/abdulmukitds/)
+
+Thank you for visiting, have a good day.
 """)
 st.markdown('</div>', unsafe_allow_html=True)
 
