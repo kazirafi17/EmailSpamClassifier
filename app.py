@@ -124,13 +124,14 @@ if st.button('🚀 Predict'):
         else:
             st.markdown('<div class="result-header">✅ Not Spam</div>', unsafe_allow_html=True)
 
-# Adding footer
-st.markdown('<div class="footer">', unsafe_allow_html=True)
-st.markdown("""
+# Closing the main content section
+st.markdown('</div>', unsafe_allow_html=True)
+
+# Adding footer outside of the main content section
+st.sidebar.markdown('<div class="footer">', unsafe_allow_html=True)
+st.sidebar.markdown("""
 Made with ❤️ by [Mukit](https://www.linkedin.com/in/abdulmukitds/)
 
 Thank you for visiting, have a good day.
 """)
-st.markdown('</div>', unsafe_allow_html=True)
-
-st.markdown('</div>', unsafe_allow_html=True)
+st.sidebar.markdown('</div>', unsafe_allow_html=True)
