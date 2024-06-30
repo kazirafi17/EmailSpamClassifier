@@ -38,10 +38,6 @@ def transform_text(text):
 tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 
-# Adding a custom logo
-logo = Image.open('logo.png')
-st.image(logo, width=150)
-
 st.title("📧 Email/SMS Spam Classifier")
 st.write("""
 ### Enter the message below to check if it is Spam or Not Spam
@@ -67,5 +63,5 @@ if st.button('🚀 Predict'):
 # Adding footer
 st.markdown("""
 ---
-Made with ❤️ by [Abdul Mukit](https://www.linkedin.com/in/abdulmukitds/)
+Made with ❤️ by [Mukit](https://www.linkedin.com/in/abdulmukitds/)
 """)
