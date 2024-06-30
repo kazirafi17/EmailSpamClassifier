@@ -38,45 +38,50 @@ def transform_text(text):
 tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 
-# Add custom CSS for background and button design
+# Custom CSS
 st.markdown(
     """
     <style>
     .main {
-        background-color: #f0f2f6;
+        background-color: black;
         padding: 20px;
         border-radius: 10px;
+        max-width: 700px;
+        margin: auto;
+        color: white;
     }
     .title {
-        color: #333;
+        color: white;
         font-size: 2.5rem;
         text-align: center;
         font-weight: bold;
         margin-bottom: 20px;
     }
-    .subtitle {
-        color: #666;
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .button {
-        background-color: #4CAF50;
+    .stTextArea>div>div>textarea {
+        background-color: #2b2b2b;
         color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 8px;
+    }
+    .section-header {
+        color: #2980b9;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
     }
     .footer {
-        color: #333;
+        color: white;
         text-align: center;
-        font-size: 0.9rem;
-        margin-top: 50px;
+        margin-top: 20px;
+    }
+    .stButton>button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    .stButton>button:hover {
+        background-color: #45a049;
     }
     </style>
     """,
@@ -85,11 +90,14 @@ st.markdown(
 
 st.markdown('<div class="main">', unsafe_allow_html=True)
 st.markdown('<div class="title">📧 Email/SMS Spam Classifier</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">### Enter the message below to check if it is Spam or Not Spam</div>', unsafe_allow_html=True)
+st.write("""
+### Enter the message below to check if it is Spam or Not Spam
+""")
 
+# User input
 input_sms = st.text_area("📝 Enter your message here:")
 
-if st.button('🚀 Predict', key='predict_button'):
+if st.button('🚀 Predict'):
     with st.spinner('Analyzing...'):
         # 1. preprocess
         transformed_sms = transform_text(input_sms)
@@ -103,9 +111,12 @@ if st.button('🚀 Predict', key='predict_button'):
         else:
             st.header("✅ Not Spam")
 
-st.markdown(
-    '<div class="footer">Made with ❤️ by <a href="https://www.linkedin.com/in/abdulmukitds/" target="_blank">Mukit</a></div>',
-    unsafe_allow_html=True
-)
+# Adding footer
+st.markdown('<div class="footer">', unsafe_allow_html=True)
+st.markdown("""
+---
+Made with ❤️ by [Mukit](https://www.linkedin.com/in/abdulmukitds/)
+""")
+st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
