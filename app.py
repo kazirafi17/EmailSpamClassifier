@@ -41,16 +41,17 @@ model = pickle.load(open('model.pkl', 'rb'))
 st.markdown(
     """
     <style>
+    body {
+        background-color: black;  /* Set the background color for the entire page */
+        color: white;  /* Set text color */
+    }
     .main {
-        background-color: black;
         padding: 20px;
         border-radius: 10px;
         max-width: 700px;
         margin: auto;
-        color: white;
     }
     .title {
-        color: white;
         font-size: 2.5rem;
         font-weight: bold;
         margin-bottom: 20px;
@@ -72,7 +73,6 @@ st.markdown(
         color: #2980b9;
     }
     .footer {
-        color: white;
         text-align: center;
         margin-top: 20px;
         font-size: 0.8rem;  /* Adjust font size for footer */
@@ -93,7 +93,6 @@ st.markdown(
         background-color: #45a049;
     }
     .result-header {
-        color: white;
         font-size: 2rem;
         margin-top: 20px;
     }
@@ -104,7 +103,7 @@ st.markdown(
 
 st.markdown('<div class="main">', unsafe_allow_html=True)
 st.markdown('<div class="title">📧 Email/SMS Spam Classifier</div>', unsafe_allow_html=True)
-st.markdown('<div class="label section-header">Enter the message below to check if it is Spam or Not Spam</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">Enter the message below to check if it is Spam or Not Spam</div>', unsafe_allow_html=True)
 
 # User input
 st.markdown('<div class="label">📝 Enter your message here:</div>', unsafe_allow_html=True)
@@ -118,7 +117,7 @@ if st.button('🚀 Predict'):
         vector_input = tfidf.transform([transformed_sms])
         # 3. predict
         result = model.predict(vector_input)[0]
-        # 4. Display result in white text color
+        # 4. Display result
         if result == 1:
             st.markdown('<div class="result-header">🚨 Spam</div>', unsafe_allow_html=True)
         else:
@@ -127,7 +126,7 @@ if st.button('🚀 Predict'):
 # Closing the main content section
 st.markdown('</div>', unsafe_allow_html=True)
 
-# Adding footer outside of the main content section
+# Adding footer
 st.sidebar.markdown('<div class="footer">', unsafe_allow_html=True)
 st.sidebar.markdown("""
 Made with ❤️ by [Mukit](https://www.linkedin.com/in/abdulmukitds/)
