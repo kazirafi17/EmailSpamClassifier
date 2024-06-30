@@ -52,7 +52,6 @@ st.markdown(
     .title {
         color: white;
         font-size: 2.5rem;
-        text-align: center;
         font-weight: bold;
         margin-bottom: 20px;
     }
@@ -92,7 +91,7 @@ st.markdown(
 
 st.markdown('<div class="main">', unsafe_allow_html=True)
 st.markdown('<div class="title">📧 Email/SMS Spam Classifier</div>', unsafe_allow_html=True)
-st.markdown('<div class="label">### Enter the message below to check if it is Spam or Not Spam</div>', unsafe_allow_html=True)
+st.markdown('<div class="label section-header">Enter the message below to check if it is Spam or Not Spam</div>', unsafe_allow_html=True)
 
 # User input
 st.markdown('<div class="label">📝 Enter your message here:</div>', unsafe_allow_html=True)
