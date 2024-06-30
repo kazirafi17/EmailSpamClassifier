@@ -88,6 +88,11 @@ st.markdown(
     .stButton>button:hover {
         background-color: #45a049;
     }
+    .result-header {
+        color: white;
+        font-size: 2rem;
+        margin-top: 20px;
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -109,11 +114,11 @@ if st.button('🚀 Predict'):
         vector_input = tfidf.transform([transformed_sms])
         # 3. predict
         result = model.predict(vector_input)[0]
-        # 4. Display
+        # 4. Display result in white text color
         if result == 1:
-            st.header("🚨 Spam")
+            st.markdown('<div class="result-header">🚨 Spam</div>', unsafe_allow_html=True)
         else:
-            st.header("✅ Not Spam")
+            st.markdown('<div class="result-header">✅ Not Spam</div>', unsafe_allow_html=True)
 
 # Adding footer
 st.markdown('<div class="footer">', unsafe_allow_html=True)
