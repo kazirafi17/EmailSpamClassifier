@@ -65,7 +65,7 @@ st.markdown(
         color: white;
     }
     .stTextArea>div>div>textarea:hover {
-        background-color: #F4F4EC;
+        background-color: white;
         color: black;
     }
     .label {
@@ -75,6 +75,10 @@ st.markdown(
         color: white;
         text-align: center;
         margin-top: 20px;
+        font-size: 0.8rem;  /* Adjust font size for footer */
+    }
+    .footer a {
+        color: white;
     }
     .stButton>button {
         background-color: #4CAF50;
@@ -123,7 +127,6 @@ if st.button('🚀 Predict'):
 # Adding footer
 st.markdown('<div class="footer">', unsafe_allow_html=True)
 st.markdown("""
----
 Made with ❤️ by [Mukit](https://www.linkedin.com/in/abdulmukitds/)
 
 Thank you for visiting, have a good day.
