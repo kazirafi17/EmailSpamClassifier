@@ -95,7 +95,8 @@ st.markdown('<div class="title">📧 Email/SMS Spam Classifier</div>', unsafe_al
 st.markdown('<div class="label">### Enter the message below to check if it is Spam or Not Spam</div>', unsafe_allow_html=True)
 
 # User input
-input_sms = st.text_area('<div class="label">📝 Enter your message here:</div>', unsafe_allow_html=True)
+st.markdown('<div class="label">📝 Enter your message here:</div>', unsafe_allow_html=True)
+input_sms = st.text_area("")
 
 if st.button('🚀 Predict'):
     with st.spinner('Analyzing...'):
