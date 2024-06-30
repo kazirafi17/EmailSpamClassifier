@@ -38,15 +38,58 @@ def transform_text(text):
 tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 
-st.title("📧 Email/SMS Spam Classifier")
-st.write("""
-### Enter the message below to check if it is Spam or Not Spam
-""")
+# Add custom CSS for background and button design
+st.markdown(
+    """
+    <style>
+    .main {
+        background-color: #f0f2f6;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .title {
+        color: #333;
+        font-size: 2.5rem;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .subtitle {
+        color: #666;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+    .footer {
+        color: #333;
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 50px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-# Using markdown for better text formatting
+st.markdown('<div class="main">', unsafe_allow_html=True)
+st.markdown('<div class="title">📧 Email/SMS Spam Classifier</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">### Enter the message below to check if it is Spam or Not Spam</div>', unsafe_allow_html=True)
+
 input_sms = st.text_area("📝 Enter your message here:")
 
-if st.button('🚀 Predict'):
+if st.button('🚀 Predict', key='predict_button'):
     with st.spinner('Analyzing...'):
         # 1. preprocess
         transformed_sms = transform_text(input_sms)
@@ -60,8 +103,9 @@ if st.button('🚀 Predict'):
         else:
             st.header("✅ Not Spam")
 
-# Adding footer
-st.markdown("""
----
-Made with ❤️ by [Mukit](https://www.linkedin.com/in/abdulmukitds/)
-""")
+st.markdown(
+    '<div class="footer">Made with ❤️ by <a href="https://www.linkedin.com/in/abdulmukitds/" target="_blank">Mukit</a></div>',
+    unsafe_allow_html=True
+)
+
+st.markdown('</div>', unsafe_allow_html=True)
