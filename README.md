@@ -22,12 +22,19 @@ The machine learning model used for this project is based on a Multinomial Naive
 
 
 ** app.py: Main file to run the Streamlit app.
+
 ** model.py: Contains the code for training and saving the machine learning model.
+
 ** requirements.txt: Lists the dependencies required to run the project.
+
 ** spam_classifier.pkl: The pre-trained machine learning model.
+
 ** logo.png: For importing an image as logo
+
 ** model.pkl: The pre-trained machine learning model.
+
 ** vectorizer.pkl: The pre-trained vectorizer used for transforming text data.
+
 ** README.md: Project documentation
 
 ## Contributing
