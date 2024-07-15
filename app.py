@@ -126,11 +126,11 @@ if st.button('🚀 Predict'):
 # Closing the main content section
 st.markdown('</div>', unsafe_allow_html=True)
 
-# Adding footer
-st.sidebar.markdown('<div class="footer">', unsafe_allow_html=True)
-st.sidebar.markdown("""
-Made with ❤️ by [Mukit](https://www.linkedin.com/in/abdulmukitds/)
+# Footer
+st.markdown(f"""
+<footer>
+    &copy;
+    <a href="https://www.linkedin.com/in/abdul-mukit-1bbb72218" target="_blank" class='highlight'>Abdul Mukit</a>.
+</footer>
+""", unsafe_allow_html=True)
 
-Thank you for visiting, have a good day.
-""")
-st.sidebar.markdown('</div>', unsafe_allow_html=True)
